@@ -6,11 +6,11 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Abant Yemek - Bolu'nun En İyi Restoranı ve Catering Hizmeti",
+  title: "Abant Yemek - Bolu'nun En İyi Restoranı ve Catering Hizmeti | Bolu Yemek",
   description:
-    "Abant Yemek, Bolu'da restoran hizmetleri ve toplu yemek organizasyonları sunan lider firma. Düğün, nişan, kurumsal etkinlik catering hizmetleri. Kaliteli yemek, profesyonel hizmet.",
+    "Abant Yemek, Bolu'da en kaliteli restoran ve toplu yemek organizasyonu hizmetleri. Düğün, nişan, kurumsal etkinlikler için profesyonel catering. Bolu'nun lezzet durağı.",
   keywords:
-    "Abant Yemek, Bolu restoran, catering Bolu, düğün yemeği, toplu yemek, kurumsal catering, Abant restoran, Bolu yemek servisi, etkinlik yemekleri, nişan organizasyonu",
+    "Abant Yemek, Bolu restoran, Bolu yemek, catering Bolu, düğün yemeği, toplu yemek, kurumsal catering, Abant restoran, Bolu yemek servisi, etkinlik yemekleri, nişan organizasyonu",
   authors: [{ name: "Abant Yemek" }],
   creator: "Abant Yemek",
   publisher: "Abant Yemek",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://abantyemek.com",
     siteName: "Abant Yemek",
-    title: "Abant Yemek - Bolu'nun En İyi Restoranı ve Catering Hizmeti",
+    title: "Abant Yemek - Bolu'nun En İyi Restoranı ve Catering Hizmeti | Bolu Yemek",
     description:
-      "Abant Yemek, Bolu'da restoran hizmetleri ve toplu yemek organizasyonları sunan lider firma. Düğün, nişan, kurumsal etkinlik catering hizmetleri.",
+      "Abant Yemek, Bolu'da en kaliteli restoran ve toplu yemek organizasyonu hizmetleri. Düğün, nişan, kurumsal etkinlikler için profesyonel catering. Bolu'nun lezzet durağı.",
     images: [
       {
         url: "https://abantyemek.com/og-image.jpg",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   other: {
     "google-site-verification": "your-google-verification-code",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
