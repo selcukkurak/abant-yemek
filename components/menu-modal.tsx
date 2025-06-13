@@ -171,7 +171,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+      <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <CardTitle className="text-orange-900 flex items-center">
             <Utensils className="h-6 w-6 mr-2" />
@@ -205,7 +205,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
           <div className="grid md:grid-cols-2 gap-4">
             {filteredItems.length > 0 ? (
               filteredItems.map((item) => (
-                <Card key={item.id} className="border-orange-200 hover:shadow-md transition-shadow">
+                <Card key={item.id} className="border-orange-200 hover:shadow-md transition-shadow bg-white">
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-semibold text-gray-900">{item.name}</h4>

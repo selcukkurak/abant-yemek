@@ -149,7 +149,7 @@ export default function AdminPanel({ isOpen, onClose }: AdminPanelProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-6xl max-h-[90vh] overflow-y-auto">
+      <Card className="w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-white">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <CardTitle className="text-[var(--primary)]">Menü Yönetim Paneli</CardTitle>
           <Button variant="ghost" size="sm" onClick={onClose}>
@@ -185,7 +185,7 @@ export default function AdminPanel({ isOpen, onClose }: AdminPanelProps) {
 
           {/* Form (Ekleme/Düzenleme) */}
           {(isAddingNew || editingItem) && (
-            <Card className="mb-6 border-[var(--primary-light)]">
+            <Card className="mb-6 border-[var(--primary-light)] bg-white">
               <CardHeader>
                 <CardTitle className="text-lg">{isAddingNew ? "Yeni Ürün Ekle" : "Ürün Düzenle"}</CardTitle>
               </CardHeader>
@@ -266,7 +266,10 @@ export default function AdminPanel({ isOpen, onClose }: AdminPanelProps) {
           <div className="grid gap-4">
             {filteredItems.length > 0 ? (
               filteredItems.map((item) => (
-                <Card key={item.id} className={`border-[var(--primary-light)] ${!item.available ? "opacity-60" : ""}`}>
+                <Card
+                  key={item.id}
+                  className={`border-[var(--primary-light)] ${!item.available ? "opacity-60" : ""} bg-white`}
+                >
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">

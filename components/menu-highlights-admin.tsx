@@ -131,7 +131,7 @@ export default function MenuHighlightsAdmin({ isOpen, onClose }: MenuHighlightsA
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+      <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b">
           <CardTitle className="text-[var(--primary)]">Menü Öne Çıkanları Yönetimi</CardTitle>
           <Button variant="ghost" size="sm" onClick={onClose}>
@@ -147,7 +147,7 @@ export default function MenuHighlightsAdmin({ isOpen, onClose }: MenuHighlightsA
 
           {/* Düzenleme Formu */}
           {editingId && (
-            <Card className="mb-6 border-[var(--primary-light)]">
+            <Card className="mb-6 border-[var(--primary-light)] bg-white">
               <CardHeader>
                 <CardTitle className="text-lg">Kart Düzenle</CardTitle>
               </CardHeader>
@@ -174,44 +174,37 @@ export default function MenuHighlightsAdmin({ isOpen, onClose }: MenuHighlightsA
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">Açıklama</label>
-                  <textarea
+                  <input
+                    type="text"
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    rows={3}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-                    placeholder="Ürünler hakkında detaylı bilgi"
+                    placeholder="Örn: Kuzu tandır, tavuk şiş, balık çeşitleri ve daha fazlası..."
                   />
                 </div>
-                <div className="flex gap-3">
-                  <Button onClick={handleSave} className="bg-[var(--primary)] hover:bg-[var(--primary-dark)]">
-                    Kaydet
-                  </Button>
-                  <Button onClick={handleCancel} variant="outline">
+                <div className="flex justify-end space-x-2">
+                  <Button variant="ghost" onClick={handleCancel}>
                     İptal
                   </Button>
+                  <Button onClick={handleSave}>Kaydet</Button>
                 </div>
               </CardContent>
             </Card>
           )}
 
           {/* Kartlar Listesi */}
-          <div className="grid gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {highlights.map((highlight) => (
-              <Card key={highlight.id} className="border-[var(--primary-light)]">
-                <CardContent className="p-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        {getIcon(highlight.icon)}
-                        <h4 className="font-semibold text-gray-900">{highlight.title}</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm mb-1">{highlight.description}</p>
-                      <p className="text-gray-500 text-xs">{highlight.details}</p>
-                    </div>
-                    <Button size="sm" variant="outline" onClick={() => handleEdit(highlight)} className="ml-4">
-                      Düzenle
-                    </Button>
-                  </div>
+              <Card key={highlight.id} className="border-[var(--primary-light)] bg-white">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                  <CardTitle className="text-sm font-medium">{highlight.title}</CardTitle>
+                  {getIcon(highlight.icon)}
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-500">{highlight.description}</p>
+                  <Button variant="secondary" size="sm" className="mt-4 w-full" onClick={() => handleEdit(highlight)}>
+                    Düzenle
+                  </Button>
                 </CardContent>
               </Card>
             ))}

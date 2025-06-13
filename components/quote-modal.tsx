@@ -57,7 +57,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-lg max-h-[90vh] overflow-y-auto">
+      <Card className="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
           <CardTitle className="text-orange-900 flex items-center">
             <Users className="h-5 w-5 mr-2" />
