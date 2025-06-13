@@ -173,4 +173,51 @@ export default function MenuHighlightsAdmin({ isOpen, onClose }: MenuHighlightsA
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Açıklama</label\
+                  <label className="text-sm font-medium text-gray-700">Açıklama</label>
+                  <textarea
+                    value={formData.details}
+                    onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                    rows={3}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                    placeholder="Ürünler hakkında detaylı bilgi"
+                  />
+                </div>
+                <div className="flex gap-3">
+                  <Button onClick={handleSave} className="bg-[var(--primary)] hover:bg-[var(--primary-dark)]">
+                    Kaydet
+                  </Button>
+                  <Button onClick={handleCancel} variant="outline">
+                    İptal
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Kartlar Listesi */}
+          <div className="grid gap-4">
+            {highlights.map((highlight) => (
+              <Card key={highlight.id} className="border-[var(--primary-light)]">
+                <CardContent className="p-4">
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        {getIcon(highlight.icon)}
+                        <h4 className="font-semibold text-gray-900">{highlight.title}</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-1">{highlight.description}</p>
+                      <p className="text-gray-500 text-xs">{highlight.details}</p>
+                    </div>
+                    <Button size="sm" variant="outline" onClick={() => handleEdit(highlight)} className="ml-4">
+                      Düzenle
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
